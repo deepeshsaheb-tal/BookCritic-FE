@@ -30,7 +30,7 @@ export const BookService = {
    * Get personalized book recommendations for the current user
    */
   getRecommendedBooks: async (limit = 4): Promise<Book[]> => {
-    return api.get<Book[]>(`/books/recommended?limit=${limit}`);
+    return api.get<Book[]>(`/recommendations/for-me?limit=${limit}`);
   },
 
   // Top rated books and new releases methods removed
