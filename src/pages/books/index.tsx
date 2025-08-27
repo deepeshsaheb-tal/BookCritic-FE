@@ -81,9 +81,24 @@ export const BooksPage: React.FC = () => {
         <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Browse Books</h1>
         
         {/* Search and filters */}
-        <div className="mt-6 flex flex-col space-y-4 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0">
-          <form onSubmit={handleSearchSubmit} className="flex-1">
-            <div className="relative rounded-md shadow-sm">
+        <div className="mt-8 mb-10">
+          <form onSubmit={handleSearchSubmit} className="max-w-3xl mx-auto">
+            <div className="relative flex items-center">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg
+                  className="h-5 w-5 text-gray-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
               <input
                 type="text"
                 name="search"
@@ -91,12 +106,12 @@ export const BooksPage: React.FC = () => {
                 value={filters.search}
                 onChange={handleSearchChange}
                 placeholder="Search books by title or author"
-                className="block w-full rounded-md border-gray-300 pr-10 focus:border-primary-500 focus:ring-primary-500 sm:text-sm"
+                className="block w-full pl-12 pr-14 py-3 border-2 border-gray-300 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-base transition duration-150 ease-in-out shadow-sm hover:shadow-md"
               />
-              <div className="absolute inset-y-0 right-0 flex items-center pr-3">
+              <div className="absolute inset-y-0 right-0 flex items-center pr-4">
                 <button
                   type="submit"
-                  className="text-gray-400 hover:text-gray-500 focus:outline-none"
+                  className="p-1.5 rounded-full bg-primary-500 text-white hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition duration-150 ease-in-out"
                 >
                   <svg
                     className="h-5 w-5"

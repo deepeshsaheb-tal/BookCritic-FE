@@ -57,11 +57,11 @@ export const ReviewEditorPage: React.FC = () => {
         rating: data.rating,
       }),
     {
-      onSuccess: (data) => {
+      onSuccess: (data, variables) => {
         // Invalidate and refetch book reviews
-        queryClient.invalidateQueries(['bookReviews', bookId]);
-        queryClient.invalidateQueries(['book', bookId]);
-        navigate(`/books/${bookId}`);
+        queryClient.invalidateQueries(['bookReviews', variables.bookId]);
+        queryClient.invalidateQueries(['book', variables.bookId]);
+        navigate(`/books/${variables.bookId}`);
       },
       onError: (err: any) => {
         setError(err?.message || 'Failed to create review. Please try again.');
@@ -77,12 +77,17 @@ export const ReviewEditorPage: React.FC = () => {
         rating: data.rating,
       }),
     {
-      onSuccess: (data) => {
-        // Invalidate and refetch book reviews and the specific review
-        queryClient.invalidateQueries(['bookReviews', review?.book.id]);
-        queryClient.invalidateQueries(['review', reviewId]);
-        queryClient.invalidateQueries(['book', review?.book.id]);
-        navigate(`/books/${review?.book.id}`);
+      onSuccess: (updatedReview) => {
+        if (review?.book?.id) {
+          // Invalidate and refetch book reviews and the specific review
+          queryClient.invalidateQueries(['bookReviews', review.book.id]);
+          queryClient.invalidateQueries(['review', reviewId]);
+          queryClient.invalidateQueries(['book', review.book.id]);
+          navigate(`/books/${review.book.id}`);
+        } else {
+          // Fallback to books page if book ID is not available
+          navigate('/books');
+        }
       },
       onError: (err: any) => {
         setError(err?.message || 'Failed to update review. Please try again.');

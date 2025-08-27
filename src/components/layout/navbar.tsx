@@ -24,6 +24,7 @@ export const Navbar: React.FC = () => {
   const userNavigation = [
     { name: 'Your Profile', href: '/profile' },
     { name: 'Your Reviews', href: '/profile/reviews' },
+    { name: 'My Favorites', href: '/favorites' },
     { name: 'Settings', href: '/profile/settings' },
   ];
 

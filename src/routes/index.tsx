@@ -17,6 +17,8 @@ const ReviewEditorPage = lazy(() => import('../pages/reviews/review-editor.tsx')
 const ProfilePage = lazy(() => import('../pages/profile/index.tsx').then(module => ({ default: module.ProfilePage })));
 const ProfileSettingsPage = lazy(() => import('../pages/profile/settings.tsx').then(module => ({ default: module.ProfileSettingsPage })));
 const ReadingListPage = lazy(() => import('../pages/profile/reading-list.tsx').then(module => ({ default: module.ReadingListPage })));
+const UserReviewsPage = lazy(() => import('../pages/profile/reviews.tsx').then(module => ({ default: module.UserReviewsPage })));
+const FavoritesPage = lazy(() => import('../pages/favorites/index.tsx').then(module => ({ default: module.FavoritesPage })));
 
 // Lazy loaded admin pages
 const AdminDashboard = lazy(() => import('../pages/admin/dashboard.tsx').then(module => ({ default: module.AdminDashboard })));
@@ -84,6 +86,8 @@ export const AppRoutes: React.FC = () => {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/profile/settings" element={<ProfileSettingsPage />} />
         <Route path="/profile/reading-list" element={<ReadingListPage />} />
+        <Route path="/profile/reviews" element={<UserReviewsPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/books/:bookId/review" element={<ReviewEditorPage />} />
         <Route path="/reviews/:reviewId/edit" element={<ReviewEditorPage />} />
       </Route>

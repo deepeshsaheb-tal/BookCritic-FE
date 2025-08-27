@@ -86,3 +86,11 @@ export interface UpdateReviewFormData {
   content: string;
   rating: number;
 }
+
+// Favorite types
+export interface UserFavorite {
+  userId: string;
+  bookId: string;
+  createdAt: string;
+  book?: Book;
+}
