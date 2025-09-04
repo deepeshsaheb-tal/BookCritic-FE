@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/auth-context.tsx';
 import { useAuthLogout } from '../../hooks/use-auth-logout.ts';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
