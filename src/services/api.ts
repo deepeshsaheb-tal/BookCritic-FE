@@ -109,7 +109,7 @@ const request = async <T>(config: AxiosRequestConfig): Promise<T> => {
   }
 };
 
-export default {
+const apiService = {
   get: <T>(url: string, config?: AxiosRequestConfig) => 
     request<T>({ ...config, method: 'GET', url }),
   post: <T>(url: string, data?: unknown, config?: AxiosRequestConfig) => 
@@ -121,3 +121,5 @@ export default {
   delete: <T>(url: string, config?: AxiosRequestConfig) => 
     request<T>({ ...config, method: 'DELETE', url }),
 };
+
+export default apiService;

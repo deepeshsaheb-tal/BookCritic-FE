@@ -42,7 +42,6 @@ export const BookDetailPage: React.FC = () => {
   
   // Check if book is in reading list
   const {
-    data: readingListData,
     isLoading: readingListLoading
   } = useQuery(
     ['readingList', id],

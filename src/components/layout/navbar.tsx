@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/auth-context.tsx';
 import { useAuthLogout } from '../../hooks/use-auth-logout.ts';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 /**
  * Navigation bar component for the application
@@ -12,7 +12,6 @@ export const Navbar: React.FC = () => {
   const { user, isAuthenticated, isAdmin } = useAuth();
   const navigate = useNavigate();
   const logoutAndNavigate = useAuthLogout();
-  const [searchQuery, setSearchQuery] = useState<string>('');
 
   // Navigation items
   const navigation = [
@@ -28,13 +27,6 @@ export const Navbar: React.FC = () => {
     { name: 'Settings', href: '/profile/settings' },
   ];
 
-  // Handle search form submission
-  const handleSearch = (e: React.FormEvent): void => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/books/search?query=${encodeURIComponent(searchQuery)}`);
-    }
-  };
 
   return (
     <Disclosure as="nav" className="bg-white shadow">

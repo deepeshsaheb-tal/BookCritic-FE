@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAuthLogout } from '../../hooks/use-auth-logout.ts';
 import { useMutation } from '@tanstack/react-query';
 import { Layout } from '../../components/layout/layout.tsx';
@@ -22,7 +21,6 @@ interface ProfileFormData {
  */
 export const ProfileSettingsPage: React.FC = () => {
   const { user } = useAuth();
-  const navigate = useNavigate();
   const logoutAndNavigate = useAuthLogout();
   
   const [formData, setFormData] = useState<ProfileFormData>({

@@ -15,7 +15,7 @@ import { Book } from '../../types';
  * User reading list page component
  */
 export const ReadingListPage: React.FC = () => {
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated } = useAuth();
   const queryClient = useQueryClient();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const booksPerPage = 10;
