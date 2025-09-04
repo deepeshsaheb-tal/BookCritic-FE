@@ -24,7 +24,7 @@ export const AdminUsersPage: React.FC = () => {
   const queryClient = useQueryClient();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const [ setSelectedUser] = useState<User | null>(null);
   const [formData, setFormData] = useState<UserFormData>({
     id: '',
     displayName: '',

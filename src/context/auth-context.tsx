@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { AuthService } from '../services/auth-service.ts';
-import { AuthState, User, LoginFormData, RegisterFormData } from '../types/index.ts';
+import { AuthState, LoginFormData, RegisterFormData } from '../types/index.ts';
 
 interface AuthContextType extends AuthState {
   login: (data: LoginFormData) => Promise<void>;

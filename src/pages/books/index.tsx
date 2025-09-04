@@ -8,7 +8,7 @@ import { StarRating } from '../../components/ui/star-rating.tsx';
 import { Spinner } from '../../components/ui/spinner.tsx';
 import { Alert } from '../../components/ui/alert.tsx';
 import { BookService } from '../../services/book-service.ts';
-import { Book, BookResponse } from '../../types';
+import { BookResponse } from '../../types';
 
 /**
  * Book browsing page with search, filtering, and pagination
@@ -60,13 +60,13 @@ export const BooksPage: React.FC = () => {
   };
   
   // Handle filter changes
-  const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
-    const { name, value } = e.target;
-    setFilters(prev => ({ ...prev, [name]: value }));
-    // Reset to page 1 when filters change
-    searchParams.set('page', '1');
-    setSearchParams(searchParams);
-  };
+  // const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+  //   const { name, value } = e.target;
+  //   setFilters(prev => ({ ...prev, [name]: value }));
+  //   // Reset to page 1 when filters change
+  //   searchParams.set('page', '1');
+  //   setSearchParams(searchParams);
+  // };
   
   // Handle pagination
   const handlePageChange = (newPage: number): void => {

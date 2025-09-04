@@ -10,7 +10,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
  */
 export const Navbar: React.FC = () => {
   const { user, isAuthenticated, isAdmin } = useAuth();
-  const navigate = useNavigate();
   const logoutAndNavigate = useAuthLogout();
 
   // Navigation items
